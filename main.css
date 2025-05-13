@@ -32,6 +32,11 @@ button {
   box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
   padding: 15px;
 }
+button:hover {
+  background-color: #f6980c;
+  box-shadow: 0 16px rgba(246, 152, 12 / 20%);
+  transition: 0.3s;
+}
 .about_images {
   width: 500px;
 }
@@ -137,4 +142,31 @@ button {
   font-size: 18px;
   font-weight: 600;
   margin-top: 40px;
+}
+footer {
+  margin: 90px 20px 90px 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.Footer__container {
+  display: flex;
+  justify-content: space-around;
+}
+.footer__copyright {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.5;
+}
+.footer__group {
+  margin-right: 80px;
+}
+.footer__group h3 {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
