@@ -22,7 +22,7 @@ header a {
   margin-right: 25px;
 }
 button {
-  font-family: "Raliway", "sans-serif";
+  font-family: "Raleway", "sans-serif";
   font-size: 15px;
   color: #fff;
   background-color: #23a030;
@@ -74,9 +74,14 @@ button {
   width: 550px;
 }
 .form__group {
-  display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  /* display: flex; */
+  /* display: contents; */
+  grid-template-rows: auto auto;
+  display: grid;
   text-align: left;
+  gap: 0;
+  margin-bottom: 20px;
 }
 .form {
   background-color: #1d263a;
@@ -93,4 +98,43 @@ button {
 .form p {
   font-size: 18px;
   opacity: 0.65;
+}
+.form form {
+  display: grid;
+  gap: 0px;
+  margin-top: 60px;
+}
+.form__group input,
+.form__group select {
+  margin-bottom: 20px; /* Добавляем отступ сверху для input/select */
+}
+.form label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  /* padding: 0px 20px 0px 20px;
+  border-radius: 15px;
+  border: none; */
+}
+.form input {
+  font-size: 18px;
+  font-weight: 600;
+  height: 60px;
+  padding: 0px 20px 0px 20px;
+  border-radius: 15px;
+  border: none;
+}
+.form select {
+  font-size: 18px;
+  font-weight: 600;
+  color: #213053;
+  height: 60px;
+  padding: 0px 20px 0px 20px;
+  border-radius: 15px;
+  border: none;
+}
+.form__submit {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px;
 }
