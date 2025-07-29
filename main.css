@@ -1,5 +1,5 @@
 body {
-  font-family: "Raliway", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #213053;
   margin-top: 0;
 }
@@ -8,10 +8,16 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
+  z-index: 1;
 }
+
 .header__logo {
   height: 30px;
 }
+
 a {
   text-decoration: none;
   color: #213053;
@@ -40,10 +46,12 @@ button:hover {
 .about_images {
   width: 500px;
 }
+
 .about_sun-images {
   width: 100px;
   height: 100px;
 }
+
 .about {
   display: flex;
   justify-content: space-around;
@@ -54,10 +62,12 @@ button:hover {
   background-position: center;
   background-size: cover;
 }
+
 .about h1 {
   font-size: 70px;
   line-height: 76px;
 }
+
 .about p {
   font-size: 18px;
   line-height: 30px;
@@ -72,9 +82,11 @@ button:hover {
   padding-right: 25px;
   margin-top: 20px;
 }
+
 .about-info {
   max-width: 550px;
 }
+
 .form__container {
   width: 550px;
 }
@@ -100,6 +112,7 @@ button:hover {
 .form h1 {
   font-size: 48px;
 }
+
 .form p {
   font-size: 18px;
   opacity: 0.65;
@@ -169,4 +182,185 @@ footer {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+}
+.card__logo {
+  width: 100px;
+  height: 100px;
+  background-color: #eaeff9;
+  border-radius: 50%;
+}
+.about_sun-images {
+  animation: rotation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.features {
+  color: #fff;
+  padding-top: 115px;
+  padding-right: 60px;
+  padding-bottom: 115px;
+  padding-left: 60px;
+}
+.features h3 {
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+}
+.features p {
+  color: black;
+  font-size: 16px;
+  line-height: 22px;
+  opacity: 0.8;
+}
+.cards {
+  display: flex;
+}
+.card {
+  margin: 25px;
+  padding-top: 35px;
+  padding-right: 40px;
+  padding-bottom: 25px;
+  padding-left: 40px;
+  border-width: 1px;
+  border-color: #d9e4e6;
+  border-radius: 5px;
+  border-style: solid;
+}
+.features__border {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e6eaf4;
+}
+.features__feedback {
+  display: flex;
+  margin: 0px 30px 0px 30px;
+}
+.features__feedback-left {
+  margin-right: 10px;
+}
+.features__feedback-left h2 {
+  font-size: 48px;
+}
+.features__feedback-left p {
+  font-size: 18px;
+  line-height: 26px;
+  opacity: 0.7;
+}
+.features__feedback-right {
+  display: flex;
+}
+.features__box {
+  padding: 30px 40px 25px 40px;
+  color: #ffffff;
+  border-radius: 25px;
+}
+.features__feedback h3 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 48px;
+}
+.features__savings-box {
+  background-color: #dc5e26;
+  box-shadow: 0px 6px 0px rgba(221, 95, 38, 0.2);
+  margin-right: 30px;
+}
+.features__rate-box {
+  background-color: #1d263a;
+  box-shadow: 0px 6px 0px rgb(29 38 58 / 20%);
+}
+.promo {
+  display: flex;
+}
+.promo__image {
+  background: url(img/chel.png);
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  flex-shrink: 0;
+}
+.promo__right {
+  background-color: #dd5f26;
+  padding: 160px 60px 160px 60px;
+}
+.cart {
+  background-color: #fff;
+  padding: 30px 40px 30px 40px;
+  line-height: 22px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 25px;
+}
+.cart p {
+  opacity: 0.8;
+}
+@keyframes rotation {
+  form {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 719px) {
+  /* Шапка */
+  header {
+    padding: 10px; /* Было: padding: 20px; */
+    margin: 50px 0; /* Добавлено */
+  }
+
+  .header__logo {
+    height: 20px; /* Было: height: 30px; */
+  }
+
+  /* Секция "about" */
+  .about {
+    padding: 50px 10px; /* Было: padding-top: 115px; padding-bottom: 115px; */
+    flex-direction: column; /* Добавлено */
+    text-align: center; /* Добавлено */
+    background-size: contain; /* Оптимизация для мобильных */
+  }
+
+  .about h1 {
+    font-size: 36px; /* Было: 70px */
+    line-height: 40px; /* Было: 76px */
+  }
+
+  .about_images {
+    width: 280px; /* Было: 500px */
+    order: 1; /* Добавлено - картинка после текста */
+    margin-top: 30px; /* Добавлено */
+  }
+
+  .about_sun-images {
+    width: 75px; /* Было: 100px */
+    height: 75px; /* Было: 100px */
+  }
+
+  /* Форма */
+  .form {
+    padding: 50px 10px; /* Было: padding-top: 115px; padding-bottom: 115px; */
+  }
+
+  .form__container {
+    width: 100%; /* Было: 550px */
+  }
+
+  /* Футер */
+  footer {
+    margin: 50px 10px; /* Было: 90px 20px */
+  }
+
+  .Footer__container {
+    flex-direction: column; /* Было: row */
+  }
+
+  .footer__group {
+    margin-right: 0; /* Было: 80px */
+    margin-bottom: 30px; /* Добавлено */
+  }
 }
