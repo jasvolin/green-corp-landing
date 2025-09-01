@@ -18,13 +18,14 @@
   </head>
   <body>
     <header>
-      <img class="header__logo" src="img/logo.svg" alt="" />
+      <img class="header_logo" src="img/logo.svg" alt="" />
       <div class="header__controls">
         <a href="#contacts">Контакты</a>
         <button>Заказать</button>
       </div>
     </header>
     <section class="about">
+      <canvas class="orb-canvas" id="orb-canvas"></canvas>
       <div class="about_info">
         <h1>Солнечные панели GreenRobotic</h1>
         <p>
@@ -34,8 +35,8 @@
         <button>Узнать подробнее</button>
       </div>
       <div class="about_images">
-        <img class="about_sun-images" src="img/sun.png" alt="" />
-        <img class="about_images" src="img/solar-panel.png" alt="" />
+        <img class="about_sun_images" src="img/sun.png" alt="" />
+        <img class="about_images_panel" src="img/solar-panel.png" alt="" />
       </div>
     </section>
     <section class="form">
@@ -71,11 +72,7 @@
       <div class="cards">
         <div class="card">
           <div class="card__logo">
-            <img
-              class="logo_1"
-              src="/img/calendar-days-solid-full.svg"
-              alt=""
-            />
+            <img class="logo_1" src="img/calendar-days-solid-full.svg" alt="" />
           </div>
 
           <h3>Уменьшите счета за электричество.</h3>
@@ -86,7 +83,7 @@
         </div>
         <div class="card">
           <div class="card__logo">
-            <img class="logo_2" src="/img/chart-line-solid-full.svg" alt="" />
+            <img class="logo_2" src="img/chart-line-solid-full.svg" alt="" />
           </div>
           <h3>Мониторинг электроэнергии.</h3>
           <p>
@@ -96,7 +93,7 @@
         </div>
         <div class="card">
           <div class="card__logo">
-            <img class="logo_3" src="/img/list-solid-full.svg" alt="" />
+            <img class="logo_3" src="img/list-solid-full.svg" alt="" />
           </div>
           <h3>Максимальная эффективность</h3>
           <p>
@@ -107,7 +104,7 @@
       </div>
     </section>
     <div class="features__border"></div>
-    <!-- !<--отделительная линия -->
+    <!--отделительная линия -->
     <div class="features__feedback">
       <div class="features__feedback-left">
         <h2>Нам доверяет <br />5000+ счастливых клиентов</h2>
@@ -133,7 +130,7 @@
         </div>
       </div>
     </div>
-    <selection class="promo">
+    <section class="promo">
       <div class="promo__image"></div>
       <div class="promo__right">
         <div class="cart">
@@ -151,10 +148,8 @@
           </div>
         </div>
       </div>
-    </selection>
-    <script src="script.js">
-      //javaScript-код
-    </script>
+    </section>
+    <script src="canvas.js"></script>
   </body>
   <footer>
     <div class="Footer__container">

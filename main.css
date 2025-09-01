@@ -14,7 +14,7 @@ header {
   z-index: 1;
 }
 
-.header__logo {
+.header_logo {
   height: 30px;
 }
 
@@ -43,11 +43,8 @@ button:hover {
   box-shadow: 0 16px rgba(246, 152, 12 / 20%);
   transition: 0.3s;
 }
-.about_images {
-  width: 500px;
-}
 
-.about_sun-images {
+.about_sun_images {
   width: 100px;
   height: 100px;
 }
@@ -61,8 +58,15 @@ button:hover {
   background: url(img/back.png) no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
 }
-
+.orb-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
 .about h1 {
   font-size: 70px;
   line-height: 76px;
@@ -81,10 +85,6 @@ button:hover {
   padding-left: 25px;
   padding-right: 25px;
   margin-top: 20px;
-}
-
-.about-info {
-  max-width: 550px;
 }
 
 .form__container {
@@ -189,12 +189,6 @@ footer {
   background-color: #eaeff9;
   border-radius: 50%;
 }
-.about_sun-images {
-  animation: rotation;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
 
 .features {
   color: #fff;
@@ -274,6 +268,7 @@ footer {
 }
 .promo {
   display: flex;
+  margin-top: 50px;
 }
 .promo__image {
   background: url(img/chel.png);
@@ -297,8 +292,32 @@ footer {
 .cart p {
   opacity: 0.8;
 }
+.about_images {
+  position: relative; /* якорь для абсолютного солнца */
+  width: 500px; /* базовая ширина на десктопе */
+  max-width: 90vw; /* не шире вьюпорта */
+}
+.about_info {
+  max-width: 550px;
+}
+
+.about_images_panel {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about_sun_images {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+  animation: rotation 10s linear infinite;
+}
 @keyframes rotation {
-  form {
+  from {
     transform: rotate(0deg);
   }
   to {
@@ -313,7 +332,7 @@ footer {
     margin: 50px 0; /* Добавлено */
   }
 
-  .header__logo {
+  .header_logo {
     height: 20px; /* Было: height: 30px; */
   }
 
@@ -331,16 +350,17 @@ footer {
   }
 
   .about_images {
-    width: 280px; /* Было: 500px */
-    order: 1; /* Добавлено - картинка после текста */
-    margin-top: 30px; /* Добавлено */
+    width: min(90vw, 280px);
   }
-
-  .about_sun-images {
-    width: 75px; /* Было: 100px */
-    height: 75px; /* Было: 100px */
+  .about_images_panel {
+    width: 100%; /* заполнить контейнер, не больше */
+    height: auto; /* сохраняем пропорции */
+    display: block; /* убираем лишние пробелы/просветы */
   }
-
+  .about_sun_images {
+    width: 75px;
+    height: 75px;
+  }
   /* Форма */
   .form {
     padding: 50px 10px; /* Было: padding-top: 115px; padding-bottom: 115px; */
