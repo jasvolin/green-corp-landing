@@ -20,3 +20,14 @@ function initIncreaseNumberAnimation() {
   increaseNumberAnimationStep(0, element, 5000);
 }
 initIncreaseNumberAnimation();
+
+document
+  .querySelector("#budget")
+  .addEventListener("change", function handleSelectChange(event) {
+    if (event.target.value === "other") {
+      // Должны добавить еще одно текстовое поле
+    }
+    if (event.target.value !== "other") {
+      // Удаляем ранее добавленное текстовое поле, если оно есть в DOM
+    }
+  });
