@@ -25,9 +25,20 @@ document
   .querySelector("#budget")
   .addEventListener("change", function handleSelectChange(event) {
     if (event.target.value === "other") {
-      // Должны добавить еще одно текстовое поле
+      let formContainer = document.createElement("div");
+      formContainer.classList.add("form__group", "form__other-input");
+      let input = document.createElement("input");
+      input.placeholder = "Введите ваш вариант";
+      input.type = "text";
+      formContainer.appendChild(input);
+      let teg = document.querySelector("form");
+      let form__submit = document.querySelector(".form__submit");
+      teg.insertBefore(formContainer, form__submit);
     }
+    let otherInput = document.querySelector(".form__other-input");
     if (event.target.value !== "other") {
-      // Удаляем ранее добавленное текстовое поле, если оно есть в DOM
+      if (event.target.value !== "other" && Boolean(otherInput));
+      let tegForm = document.querySelector("form");
+      tegForm.removeChild(otherInput);
     }
   });
