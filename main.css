@@ -2,16 +2,25 @@ body {
   font-family: "Raleway", sans-serif;
   color: #213053;
   margin-top: 0;
+  padding-top: 70px;
 }
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  position: sticky;
+
+  position: fixed;
   top: 0px;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0);
   z-index: 1;
+  left: 0;
+  right: 0;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+.header__scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
 }
 
 .header_logo {
@@ -53,7 +62,7 @@ button:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 115px;
+  padding-top: 200px;
   padding-bottom: 115px;
   background: url(img/back.png) no-repeat;
   background-position: center;
@@ -210,6 +219,9 @@ footer {
 }
 .cards {
   display: flex;
+  width: 100%;
+
+  box-sizing: border-box;
 }
 .card {
   margin: 25px;
@@ -382,5 +394,57 @@ footer {
   .footer__group {
     margin-right: 0; /* Было: 80px */
     margin-bottom: 30px; /* Добавлено */
+  }
+}
+/* вставка из гпт */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2) Блок с карточками: перенос и аккуратные зазоры */
+.features {
+  padding-inline: clamp(16px, 4vw, 60px);
+} /* адаптивные поля */
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* <-- разрешаем перенос строк */
+  gap: 30px; /* вместо внешних margin у .card */
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 3) Сами карточки: без внешнего margin, гибкая ширина */
+.card {
+  flex: 1 1 300px; /* можно 260–340px по вкусу */
+  margin: 0; /* margin больше не нужен — есть gap */
+  min-width: 0; /* разрешаем сжиматься содержимому */
+  overflow-wrap: anywhere; /* на случай длинных слов/URL */
+}
+
+/* 4) Логотипы в кружке, чтобы не выпирали */
+.card__logo {
+  width: 80px;
+  height: 80px;
+  background-color: #eaeff9;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.card__logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 5) На мобильных — меньше боковых полей */
+@media (max-width: 719px) {
+  .features {
+    padding-inline: 16px;
   }
 }

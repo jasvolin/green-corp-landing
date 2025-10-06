@@ -17,7 +17,7 @@
     <title>Солнечные батареи GreenCorp</title>
   </head>
   <body>
-    <header>
+    <header id="siteHeader">
       <img class="header_logo" src="img/logo.svg" alt="" />
       <div class="header__controls">
         <a href="#contacts">Контакты</a>
@@ -38,6 +38,7 @@
         <img class="about_sun_images" src="img/sun.png" alt="" />
         <img class="about_images_panel" src="img/solar-panel.png" alt="" />
       </div>
+      <div id="heroEnd" aria-hidden="true"></div>
     </section>
     <section class="form">
       <div class="form__container">
@@ -156,6 +157,31 @@
     </section>
     <script src="canvas.js"></script>
     <script src="animation.js"></script>
+    <script>
+      (function () {
+        const header = document.getElementById("siteHeader");
+        const sentinel = document.getElementById("heroEnd");
+
+        if (!header || !sentinel) return;
+
+        // Пока виден низ hero — шапка зелёная; как ушёл из вьюпорта — возвращаемся
+        const io = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              header.classList.add("is-green");
+            } else {
+              header.classList.remove("is-green");
+            }
+          },
+          {
+            threshold: 0,
+            rootMargin: "-1px 0px 0px 0px", // переключаемся аккурат на границе
+          }
+        );
+
+        io.observe(sentinel);
+      })();
+    </script>
   </body>
   <footer>
     <div class="Footer__container">
